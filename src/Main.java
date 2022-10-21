@@ -17,14 +17,10 @@ public class Main {
             System.out.println("формат математической операции не удовлетворяет заданию");
             System.exit(1);
         }
+//        for (int i = 0; i < strings.length; i++){
+//            System.out.println(strings[i]);
+//        }
 
-        try {
-            x = Integer.parseInt(strings[0]);
-            y = Integer.parseInt(strings[2]);
-        } catch (NumberFormatException e) {
-            System.out.println("Ошибка типа данных: " + e);
-            System.exit(1);
-        }
 
         if (Objects.equals(strings[0], (RomanNumeral.I).toString())) {
             strings[0] = "1";
@@ -109,7 +105,13 @@ public class Main {
             strings[2] = "10";
             IsArabic1 = true;
         }
-
+        try {
+            x = Integer.parseInt(strings[0]);
+            y = Integer.parseInt(strings[2]);
+        } catch (NumberFormatException e) {
+            System.out.println("Ошибка типа данных: " + e);
+            System.exit(1);
+        }
 
 
 
@@ -318,9 +320,10 @@ public class Main {
 
                 System.exit(1);
             }
+
+        }
             System.out.println("используются одновременно разные системы счисления");
             System.exit(1);
-        }
         }
 
         return "";
